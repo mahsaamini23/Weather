@@ -9,7 +9,7 @@ const router = createBrowserRouter([
         element:<Home/>
     },
     {
-        path:"singlePageCity/:cityID",
+        path:"/singlePageCity/:cityID",
         element:<SinglePageCity/>
     }
 ])
