@@ -1,10 +1,16 @@
-import { RouterProvider } from "react-router-dom";
-import router from "./route/route"
 
+import { RouterProvider } from "react-router-dom";
+import router from "./route/route";
+import {ThemeProvider} from "@mui/material/styles";
+import CssBaseline from "@mui/material/CssBaseline";
+import {theme} from "./theme/theme";
 
 function App() {
   return (
-    <RouterProvider router={router}/>
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+      <RouterProvider router={router}/>
+    </ThemeProvider>
   );
 }
 
