@@ -13,22 +13,24 @@ const Home=()=>{
     const [city, setCity] = useState('')
     const [cityWeather, setCityWeather] = useState({})
     const [loading, setLoading] = useState(true)
+    const [selectCity, setSelectCity] = useState(search)
+
 
     let nameCity = search
-    const getCityId=(nameCity)=>{
-            for(let i=0 ; i<cities.length ; i++){
-                if(nameCity === cities[i].name){
-                    return(cities[i].id)
-                }
-            }
-    }
 
+    const getCityId=(nameCity)=>{
+        for(let i=0 ; i<cities.length ; i++){
+            if(nameCity === cities[i].name){
+                return(cities[i].id)
+            }
+        }
+    }
+    
     const handleGetData = async () => {
         const cityId = getCityId(nameCity)
         const data = await handleGetOneDayWeather(cityId).then(data => data.data)
         setCityWeather(data)
         setLoading(false)
-        console.log(data)
     }
     
     useEffect(() => {
@@ -42,7 +44,7 @@ const Home=()=>{
     return(
         <Grid container sx={{display:'flex',flexDirection:'column', gap:'30px'}}>
             {/* <FavoriteBorderIcon sx={{color:'#fff', fontSize:35}}/> */}
-            <SearchCity setSearch={setSearch} search={search} setCity={setCity}/>
+            <SearchCity setSearch={setSearch} search={search} selectCity={selectCity} setSelectCity={setSelectCity}/>
             <Grid container item sx={{margin:'20px 0', display:'flex',justifyContent:'center'}}>
                 {cities.filter(city => search === '' ? '' : city.name.includes(search))
                 .map(city => (
