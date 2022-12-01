@@ -30,7 +30,7 @@ const DialogSearch =({setOpenDialogSearch, openDialogSearch, setSelectCity,setSe
                     <TableBody>
                         {cities.map(city =>(
                             <TableRow cursor='pointer' sx={{width:'300px'}}>
-                                <TableCell align="center" onClick={()=>handleSelectCity(city.id)}>{city.name}</TableCell>
+                                <TableCell align="center" sx={{cursor:'pointer'}} onClick={()=>handleSelectCity(city.id)}>{city.name}</TableCell>
                             </TableRow>
                         ))}
                     </TableBody>
