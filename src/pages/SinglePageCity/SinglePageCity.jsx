@@ -14,7 +14,6 @@ const SinglePageCity=()=>{
     const getNameCity = ()=>{
         for(let j=0 ; j<cities.length ; j++){
             if(Number(cityID) === cities[j].id){
-                // setName(cities[j].name)
                 return(cities[j].name)
             }
         }
@@ -25,7 +24,6 @@ const SinglePageCity=()=>{
     const handleGetData = async () => {
         const data = await handleGetFiveDayWeather(cityID).then(data => data.data.list)
         setCityWeatherFuture(data)
-         console.log(data)
     }
     
     useEffect(() => {
