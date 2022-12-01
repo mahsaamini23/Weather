@@ -2,7 +2,7 @@ import React from "react";
 import {Link} from "react-router-dom";
 import CustomButton from "../../components/Button/Button";
 import Grid from "@mui/material/Grid";
-import Typography from "@mui/material/typography";
+import Typography from "@mui/material/Typography";
 import WbSunnyIcon from '@mui/icons-material/WbSunny';
 import TireRepairIcon from '@mui/icons-material/TireRepair';
 import AirIcon from '@mui/icons-material/Air';
