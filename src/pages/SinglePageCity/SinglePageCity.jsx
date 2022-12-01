@@ -23,7 +23,7 @@ const SinglePageCity=()=>{
     let nameCity = getNameCity()
 
     const handleGetData = async () => {
-        const data = await handleGetFiveDayWeather(cityID)
+        const data = await handleGetFiveDayWeather(cityID).then(data => data.data.list)
         setCityWeatherFuture(data)
          console.log(data)
     }

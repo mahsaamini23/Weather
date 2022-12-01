@@ -25,7 +25,7 @@ const Home=()=>{
 
     const handleGetData = async () => {
         const cityId = getCityId(nameCity)
-        const data = await handleGetOneDayWeather(cityId)
+        const data = await handleGetOneDayWeather(cityId).then(data => data.data)
         setCityWeather(data)
         setLoading(false)
         console.log(data)
