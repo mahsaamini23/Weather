@@ -14,7 +14,7 @@ const SearchCity =({setSearch, search, selectCity, setSelectCity})=>{
 
     return(
         <Grid>
-            <InputBase sx={{borderBottom:'2px solid #fff',color:'#fff',padding:'0 15px',cursor:'pointer'}} value={search} onClick={handleOpenDialogSearch}/>
+            <InputBase sx={{borderBottom:'2px solid #fff',color:'#fff',padding:'0 15px'}} value={search} onClick={handleOpenDialogSearch}/>
             <DialogSearch openDialogSearch={openDialogSearch} setOpenDialogSearch={setOpenDialogSearch} selectCity={selectCity} setSelectCity={setSelectCity} setSearch={setSearch}/>
         </Grid>
     )
