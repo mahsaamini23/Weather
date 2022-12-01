@@ -7,7 +7,7 @@ import TableCell from '@mui/material/TableCell';
 import TableContainer from '@mui/material/TableContainer';
 import TableRow from '@mui/material/TableRow';
 import Paper from '@mui/material/Paper';
-
+import Typography from '@mui/material/Typography';
 
 const DialogSearch =({setOpenDialogSearch, openDialogSearch, setSelectCity,setSearch})=>{
 
@@ -30,7 +30,11 @@ const DialogSearch =({setOpenDialogSearch, openDialogSearch, setSelectCity,setSe
                     <TableBody>
                         {cities.map(city =>(
                             <TableRow cursor='pointer' sx={{width:'300px'}}>
-                                <TableCell align="center" sx={{cursor:'pointer'}} onClick={()=>handleSelectCity(city.id)}>{city.name}</TableCell>
+                                <TableCell align="center" onClick={()=>handleSelectCity(city.id)}>
+                                    <Typography sx={{cursor:'pointer'}}>
+                                        {city.name}
+                                    </Typography>
+                                </TableCell>
                             </TableRow>
                         ))}
                     </TableBody>
